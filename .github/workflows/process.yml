@@ -20,10 +20,10 @@ jobs:
           node-version: 16.x
       - name: Install
         run: npm install
-      - name: Get ORYX layout
-        run: npm run get
-      - name: Process macros
-        run: npm start
+      # - name: Get ORYX layout
+      #   run: npm run get
+      # - name: Process macros
+      #   run: npm start
       - name: Compile QMK Firmware from source
         uses: Phoscur/QMK-compile@main
         with:
@@ -39,3 +39,4 @@ jobs:
           files: |
             artifacts/moonlander_firmware.bin
         
+moonlander/firmware @ breakpoint_2022_05_28-6047-g983736

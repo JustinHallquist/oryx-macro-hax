@@ -1,6 +1,6 @@
 node_modules
 coverage
 test
-layout_src
+# layout_src
 .env
-!layout_src/3ogrw
+# !layout_src/3ogrw
