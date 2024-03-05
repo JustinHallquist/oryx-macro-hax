@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Macro Enhancement
     env:
-      LAYOUT_ID: ${{ vars.LAYOUT_ID }}
-      LAYOUT_FOLDER: ${{ vars.LAYOUT_FOLDER }}
-      USER_NAME: ${{ github.repository_owner }}
+      LAYOUT_ID: 3ogrw
+      LAYOUT_FOLDER: moonlander_taunty3_source
+      USER_NAME: JustinHallquist
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -27,7 +27,7 @@ jobs:
       - name: Compile QMK Firmware from source
         uses: Phoscur/QMK-compile@main
         with:
-          path: layout_src/${{ vars.LAYOUT_FOLDER }}
+          path: ./layout_src
           artifacts_path: ${{ github.workspace }}/artifacts
           keymap: firmware
           keyboard: moonlander
