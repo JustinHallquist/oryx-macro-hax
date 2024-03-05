@@ -3,3 +3,4 @@ coverage
 test
 layout_src
 .env
+!layout_src/3ogrw
