@@ -1,7 +1,6 @@
 import { MacroBuilder } from "../src/MacroBuilder";
 
 export function prepare(newMacro) {
-
     type DelayCommand = {
         type: "delay";
         ms: number;
@@ -15,27 +14,12 @@ export function prepare(newMacro) {
     type Tick = Command[];
     type RsMacro = Tick[];
 
-    function skipTick(): DelayCommand {
-        return {
-            type: "delay",
-            ms: 600
-        };
-    }
-
-    function skipGcd(): DelayCommand {
-        return {
-            type: "delay",
-            ms: 600 * 3
-        };
-    }
-
     function delay(ms: number): DelayCommand {
         return {
             type: "delay",
             ms
         };
     }
-
 
     function type(input: string, modifier?: "shift" | "ctrl"): InputCommand {
         return {
@@ -77,25 +61,15 @@ export function prepare(newMacro) {
     }
 
     const macroExtensions = {
-        "zzros": executeMacro([
-            // [type("8"), delay(512)],
-            // [type("["), delay(512), type("g"), delay(512),],
-            [type("a"), delay(512), type("s"), delay(512), type("d"), delay(512)],
-            [type("q"), delay(512), type("w"), delay(2010)],
-            // [type("q"), delay(512), type("w"), delay(2010)],
-            // [type("q"), delay(512), type("w"), delay(2010)],
-            // [type("q"), delay(512), type("w"), delay(2010)],
-            // [type("q"), delay(512), type("w"), delay(2010)]
-        ]),
-        // "fivem": executeMacro([
-        //     [type("["), delay(512), type("g"), delay(512),],
-        // ]),
-        // "thirtym": executeMacro([
-        //     [type("a"), delay(512), type("s"), delay(512), type("d"), delay(512)],
-        // ]),
-        // "skills": executeMacro([
-        //     [type("q"), delay(512), type("w"), delay(2010)]
-        // ]),
+        "zzros": newMacro()
+            .tapKey("KC_8", 500)
+            .tapKey("KC_LBRC", 500)
+            .tapKey("KC_G", 500)
+            .tapKey("KC_A", 500)
+            .tapKey("KC_S", 500)
+            .tapKey("KC_D", 500)
+            .tapKey("KC_Q", 500)
+            .tapKey("KC_W", 2000)
     };
 
     return { macroExtensions };
