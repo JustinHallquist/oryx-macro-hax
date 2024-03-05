@@ -62,14 +62,14 @@ export function prepare(newMacro) {
 
     const macroExtensions = {
         "zzros": newMacro()
-            .tapKey("KC_8", 500)
-            .tapKey("KC_LBRC", 500)
-            .tapKey("KC_G", 500)
-            .tapKey("KC_A", 500)
-            .tapKey("KC_S", 500)
-            .tapKey("KC_D", 500)
-            .tapKey("KC_Q", 500)
-            .tapKey("KC_W", 2000)
+            .tapKey("X_KC_8", 500)
+            .tapKey("X_KC_LBRC", 500)
+            .tapKey("X_KC_G", 500)
+            .tapKey("X_KC_A", 500)
+            .tapKey("X_KC_S", 500)
+            .tapKey("X_KC_D", 500)
+            .tapKey("X_KC_Q", 500)
+            .tapKey("X_KC_W", 2000)
     };
 
     return { macroExtensions };
