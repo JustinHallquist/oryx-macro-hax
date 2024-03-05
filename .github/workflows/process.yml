@@ -38,5 +38,3 @@ jobs:
           title: "Updated firmware"
           files: |
             artifacts/moonlander_firmware.bin
-        
-moonlander/firmware @ breakpoint_2022_05_28-6047-g983736
